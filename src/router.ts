@@ -6,27 +6,23 @@ import { initInstructions } from "./pages/instructions";
 
 const routes = [
   {
-    path: /\/dwf-m5-desafio"/,
+    path: /\/dwf-m5-desafio\/home/,
     page: initHome,
   },
   {
-    path: /\/home/,
-    page: initHome,
-  },
-  {
-    path: /\/instructions/,
+    path: /\/dwf-m5-desafio\/instructions/,
     page: initInstructions,
   },
   {
-    path: /\/game/,
+    path: /\/dwf-m5-desafio\/game/,
     page: initGame,
   },
   {
-    path: /\/result\/loose/,
+    path: /\/dwf-m5-desafio\/result\/loose/,
     page: initResultLoose,
   },
   {
-    path: /\/result\/win/,
+    path: /\/dwf-m5-desafio\/result\/win/,
     page: initResultWin,
   },
 ];
@@ -46,9 +42,9 @@ export function initRouter(container: Element) {
       }
     }
   }
-  location.pathname.replace("/dwf-m5-desafio", "");
-  if (location.pathname == "/") {
-    goTo("/home");
+
+  if (location.host.includes("github.io")) {
+    goTo("/dwf-m5-desafio/home");
   } else {
     handleRoute(location.pathname);
   }
