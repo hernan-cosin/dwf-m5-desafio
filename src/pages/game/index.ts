@@ -194,10 +194,10 @@ export function initGame(params) {
     const whoWon = state.whoWins(myMove, computerMove);
 
     if (whoWon == 1) {
-      params.goTo("/result/win");
+      params.goTo("/dwf-m5-desafio/result/win");
     }
     if (whoWon == 0) {
-      params.goTo("/result/loose");
+      params.goTo("/dwf-m5-desafio/result/loose");
     }
     if (whoWon == -1) {
       createDrawScene();
@@ -228,7 +228,7 @@ export function initGame(params) {
       empateContainer.appendChild(style);
 
       button.addEventListener("click", () => {
-        params.goTo("/instructions");
+        params.goTo("/dwf-m5-desafio/instructions");
       });
     }
   }
@@ -242,7 +242,7 @@ export function initGame(params) {
       button.textContent = "Volver a Jugar";
       button.addEventListener("click", (e) => {
         e.preventDefault();
-        params.goTo("/instructions");
+        params.goTo("/dwf-m5-desafio/instructions");
       });
       div.appendChild(button);
     }, 500);

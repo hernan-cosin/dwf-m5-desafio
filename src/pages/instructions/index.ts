@@ -65,7 +65,7 @@ export function initInstructions(params) {
   const button = div.querySelector(".button");
   button.addEventListener("click", (e) => {
     e.preventDefault();
-    params.goTo("/game");
+    params.goTo("/dwf-m5-desafio/game");
   });
   return div;
 }

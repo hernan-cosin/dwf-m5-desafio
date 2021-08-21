@@ -70,7 +70,7 @@ export function initHome(params) {
   const button = div.querySelector(".button");
   button.addEventListener("click", (e) => {
     e.preventDefault();
-    params.goTo("/instructions");
+    params.goTo("/dwf-m5-desafio/instructions");
   });
 
   return div;

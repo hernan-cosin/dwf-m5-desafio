@@ -44,7 +44,7 @@ export function initResultWin(params) {
   const button = div.querySelector(".button");
   button.addEventListener("click", (e) => {
     e.preventDefault();
-    params.goTo("/instructions");
+    params.goTo("/dwf-m5-desafio/instructions");
   });
 
   const scoreContainer = div.querySelector(".score-container");
