@@ -6,6 +6,10 @@ import { initInstructions } from "./pages/instructions";
 
 const routes = [
   {
+    path: /\/dwf-m5-desafio"/,
+    page: initHome,
+  },
+  {
     path: /\/home/,
     page: initHome,
   },
@@ -42,7 +46,7 @@ export function initRouter(container: Element) {
       }
     }
   }
-
+  location.pathname.replace("/dwf-m5-desafio", "");
   if (location.pathname == "/") {
     goTo("/home");
   } else {
