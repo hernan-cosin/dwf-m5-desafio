@@ -6,6 +6,10 @@ import { initInstructions } from "./pages/instructions";
 
 const routes = [
   {
+    path: /\/home/,
+    page: initHome,
+  },
+  {
     path: /\/dwf-m5-desafio\/home/,
     page: initHome,
   },
@@ -45,6 +49,9 @@ export function initRouter(container: Element) {
 
   if (location.host.includes("github.io")) {
     goTo("/dwf-m5-desafio/home");
+  }
+  if (location.pathname == "/") {
+    goTo("/home");
   } else {
     handleRoute(location.pathname);
   }

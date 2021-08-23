@@ -16,6 +16,7 @@ export function initGame(params) {
             <c-play class="jugada papel" play="papelLarge"></c-play>
             <c-play class="jugada tijera" play="tijeraLarge"></c-play>
         </div>
+        <div class="no-play-button-container"></div>
     `;
 
   const style = document.createElement("style");
@@ -129,11 +130,14 @@ export function initGame(params) {
     ".computer-jugada-container"
   );
   const empateContainer = div.querySelector(".empate-container");
-  const jugadasContainer = div.querySelector(".jugada-container");
+  const jugadasContainer = div.querySelector(".jugada-container") as any;
   const piedraEl = div.querySelector(".piedra");
   const papelEl = div.querySelector(".papel");
   const tijeraEl = div.querySelector(".tijera");
   const counter = div.querySelector(".counter");
+  const noPlayButtonContainer = div.querySelector(
+    ".no-play-button-container"
+  ) as any;
 
   const jugadas = [piedraEl, papelEl, tijeraEl];
   jugadas.map((e: any) => {
@@ -230,13 +234,17 @@ export function initGame(params) {
       button.addEventListener("click", () => {
         params.goTo("/dwf-m5-desafio/instructions");
       });
+      noPlayButtonContainer.style.display = "none";
     }
   }
 
   counter.addEventListener("timeOut", (e) => {
     setTimeout(() => {
-      const jugadasCont = jugadasContainer as any;
+      const jugadasCont = jugadasContainer;
       jugadasCont.classList.add("fade");
+      const noPlayButtonContainer = div.querySelector(
+        ".no-play-button-container"
+      );
       const button = document.createElement("c-button");
       button.setAttribute("class", "button-no-play");
       button.textContent = "Volver a Jugar";
@@ -244,7 +252,7 @@ export function initGame(params) {
         e.preventDefault();
         params.goTo("/dwf-m5-desafio/instructions");
       });
-      div.appendChild(button);
+      noPlayButtonContainer.appendChild(button);
     }, 500);
   });
   return div;
